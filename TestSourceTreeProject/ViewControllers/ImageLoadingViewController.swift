@@ -12,6 +12,7 @@ class ImageLoadingViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
     
     var images:[ImageModel] = [] {
         didSet {
@@ -23,7 +24,11 @@ class ImageLoadingViewController: UIViewController {
         "https://picsum.photos/id/243/1200/768",
         "https://picsum.photos/id/239/1200/768",
         "https://picsum.photos/id/253/1200/768",
-        "https://picsum.photos/id/215/1200/768"
+        "https://picsum.photos/id/215/1200/768",
+        "https://picsum.photos/id/258/1200/768",
+        "https://picsum.photos/id/238/1200/768",
+        "https://picsum.photos/id/231/1200/768",
+        "https://picsum.photos/id/230/1200/768"
     ]
     
     // MARK: - LifeCycle
@@ -48,6 +53,9 @@ class ImageLoadingViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     self.images.append(imageModel)
+                    if self.images.count >= self.imageUrls.count {
+                        self.activityView.stopAnimating()
+                    }
                 }
                 
 //  self.images.append(imageModel) - если добавлять в массив в .global, задачи могут выполниться одновременно и будут одновременно записываться в массив, тогда одна задача может перезатереть другую и крешниться приложение
@@ -57,16 +65,19 @@ class ImageLoadingViewController: UIViewController {
 // Thread safety - потокобезопасность в документации класса
 // serial - обеспечивает потокобезопасность
             }
-            
-//            let mySerialQueue = DispatchQueue(label: "Чтобы сохранить последовательность картинок, создаем свою очередь")
+        }
+        
+//         for imagePath in imageUrls {
+//
+//            let mySerialQueue = DispatchQueue(label: "Чтобы сохранить последовательность картинок, создаем свою очередь") // serial queue
 //            mySerialQueue.async {
 //                let imageModel = ImageModel(imagePath: imagePath)
 //                DispatchQueue.main.async {
 //                    self.images.append(imageModel)
 //                }
 //            }
-            
-        }
+//        }
+    
     }
 }
 

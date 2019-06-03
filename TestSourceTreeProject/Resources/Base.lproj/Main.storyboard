@@ -103,20 +103,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8gJ-BD-snu">
+                                <rect key="frame" x="169" y="325" width="37" height="37"/>
+                                <color key="color" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.83186400000000005" green="0.94710000000000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="4N5-tk-wvN" firstAttribute="centerX" secondItem="7Cx-kU-nTK" secondAttribute="centerX" id="0ZK-rf-zn5"/>
+                            <constraint firstItem="8gJ-BD-snu" firstAttribute="centerY" secondItem="7Cx-kU-nTK" secondAttribute="centerY" id="361-Oh-tGf"/>
                             <constraint firstItem="29T-uW-Ob9" firstAttribute="top" secondItem="7Cx-kU-nTK" secondAttribute="top" id="4VV-Ws-S6G"/>
                             <constraint firstItem="4N5-tk-wvN" firstAttribute="top" secondItem="29T-uW-Ob9" secondAttribute="bottom" id="CX8-YF-q8J"/>
                             <constraint firstItem="29T-uW-Ob9" firstAttribute="width" secondItem="8DF-8W-Roy" secondAttribute="width" id="UCY-g8-l9l"/>
                             <constraint firstItem="4N5-tk-wvN" firstAttribute="width" secondItem="8DF-8W-Roy" secondAttribute="width" id="a5n-xE-I0p"/>
                             <constraint firstItem="4N5-tk-wvN" firstAttribute="bottom" secondItem="7Cx-kU-nTK" secondAttribute="bottom" id="n99-e5-iUv"/>
                             <constraint firstItem="29T-uW-Ob9" firstAttribute="centerX" secondItem="7Cx-kU-nTK" secondAttribute="centerX" id="rBr-ou-baD"/>
+                            <constraint firstItem="8gJ-BD-snu" firstAttribute="centerX" secondItem="7Cx-kU-nTK" secondAttribute="centerX" id="rRH-vq-K0e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Cx-kU-nTK"/>
                     </view>
                     <connections>
+                        <outlet property="activityView" destination="8gJ-BD-snu" id="lf3-d1-BAt"/>
                         <outlet property="searchBar" destination="29T-uW-Ob9" id="Npf-x7-Daa"/>
                         <outlet property="tableView" destination="4N5-tk-wvN" id="iil-Xm-zRv"/>
                     </connections>
