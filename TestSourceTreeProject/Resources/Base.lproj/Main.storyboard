@@ -50,7 +50,7 @@
         <!--Image Loading View Controller-->
         <scene sceneID="7eu-Id-Xsb">
             <objects>
-                <viewController id="NOs-0i-2Li" customClass="ImageLoadingViewController" customModule="TestSourceTreeProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="2" id="NOs-0i-2Li" customClass="ImageLoadingViewController" customModule="TestSourceTreeProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8DF-8W-Roy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,22 +63,23 @@
                                 <rect key="frame" x="0.0" y="76" width="375" height="591"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageLoadingViewControllerID" rowHeight="150" id="Ch3-Vg-0gu" customClass="ImageTableViewCell" customModule="TestSourceTreeProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageLoadingViewControllerID" rowHeight="180" id="Ch3-Vg-0gu" customClass="ImageTableViewCell" customModule="TestSourceTreeProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ch3-Vg-0gu" id="hom-hp-dDH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="179.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tbL-XK-v1E">
-                                                    <rect key="frame" x="0.0" y="10" width="375" height="100"/>
+                                                    <rect key="frame" x="0.0" y="10" width="375" height="119"/>
                                                     <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="100" id="al0-F9-bkQ"/>
-                                                    </constraints>
                                                 </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="6J4-HZ-0dl">
+                                                    <rect key="frame" x="169" y="51" width="37" height="37"/>
+                                                    <color key="color" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </activityIndicatorView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gD-uX-Q2B">
-                                                    <rect key="frame" x="0.0" y="130" width="375" height="9.5"/>
+                                                    <rect key="frame" x="0.0" y="149" width="375" height="20.5"/>
                                                     <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -90,40 +91,35 @@
                                                 <constraint firstAttribute="bottom" secondItem="4gD-uX-Q2B" secondAttribute="bottom" constant="10" id="AZe-l7-4ma"/>
                                                 <constraint firstItem="4gD-uX-Q2B" firstAttribute="width" secondItem="hom-hp-dDH" secondAttribute="width" id="GR3-zM-hcN"/>
                                                 <constraint firstItem="tbL-XK-v1E" firstAttribute="width" secondItem="hom-hp-dDH" secondAttribute="width" id="UsP-5h-sJe"/>
+                                                <constraint firstItem="6J4-HZ-0dl" firstAttribute="centerX" secondItem="tbL-XK-v1E" secondAttribute="centerX" id="VQn-ff-gTv"/>
+                                                <constraint firstItem="6J4-HZ-0dl" firstAttribute="centerY" secondItem="tbL-XK-v1E" secondAttribute="centerY" id="fWp-3z-koN"/>
                                                 <constraint firstItem="tbL-XK-v1E" firstAttribute="top" secondItem="hom-hp-dDH" secondAttribute="top" constant="10" id="mvL-kI-A0w"/>
                                                 <constraint firstItem="4gD-uX-Q2B" firstAttribute="centerX" secondItem="hom-hp-dDH" secondAttribute="centerX" id="sWL-5O-mtl"/>
                                                 <constraint firstItem="tbL-XK-v1E" firstAttribute="centerX" secondItem="hom-hp-dDH" secondAttribute="centerX" id="yFO-ss-JJ3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="imageLoadingHeightConstraint" destination="al0-F9-bkQ" id="wzH-ZB-12G"/>
+                                            <outlet property="activityView" destination="6J4-HZ-0dl" id="pVG-19-ecZ"/>
                                             <outlet property="imageLoadingLabel" destination="4gD-uX-Q2B" id="zq5-BT-dH2"/>
                                             <outlet property="imageLoadingView" destination="tbL-XK-v1E" id="f0k-2U-svM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8gJ-BD-snu">
-                                <rect key="frame" x="169" y="325" width="37" height="37"/>
-                                <color key="color" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.83186400000000005" green="0.94710000000000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="4N5-tk-wvN" firstAttribute="centerX" secondItem="7Cx-kU-nTK" secondAttribute="centerX" id="0ZK-rf-zn5"/>
-                            <constraint firstItem="8gJ-BD-snu" firstAttribute="centerY" secondItem="7Cx-kU-nTK" secondAttribute="centerY" id="361-Oh-tGf"/>
                             <constraint firstItem="29T-uW-Ob9" firstAttribute="top" secondItem="7Cx-kU-nTK" secondAttribute="top" id="4VV-Ws-S6G"/>
                             <constraint firstItem="4N5-tk-wvN" firstAttribute="top" secondItem="29T-uW-Ob9" secondAttribute="bottom" id="CX8-YF-q8J"/>
                             <constraint firstItem="29T-uW-Ob9" firstAttribute="width" secondItem="8DF-8W-Roy" secondAttribute="width" id="UCY-g8-l9l"/>
                             <constraint firstItem="4N5-tk-wvN" firstAttribute="width" secondItem="8DF-8W-Roy" secondAttribute="width" id="a5n-xE-I0p"/>
                             <constraint firstItem="4N5-tk-wvN" firstAttribute="bottom" secondItem="7Cx-kU-nTK" secondAttribute="bottom" id="n99-e5-iUv"/>
                             <constraint firstItem="29T-uW-Ob9" firstAttribute="centerX" secondItem="7Cx-kU-nTK" secondAttribute="centerX" id="rBr-ou-baD"/>
-                            <constraint firstItem="8gJ-BD-snu" firstAttribute="centerX" secondItem="7Cx-kU-nTK" secondAttribute="centerX" id="rRH-vq-K0e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Cx-kU-nTK"/>
                     </view>
                     <connections>
-                        <outlet property="activityView" destination="8gJ-BD-snu" id="lf3-d1-BAt"/>
                         <outlet property="searchBar" destination="29T-uW-Ob9" id="Npf-x7-Daa"/>
                         <outlet property="tableView" destination="4N5-tk-wvN" id="iil-Xm-zRv"/>
                     </connections>

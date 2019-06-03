@@ -12,16 +12,16 @@ class ImageLoadingViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activityView: UIActivityIndicatorView!
     
-    var images:[ImageModel] = [] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    //    var images:[ImageModel] = [] {
+//        didSet {
+//            tableView.reloadData()
+//        }
+//    }
     
-    var imageUrls = [
-        "https://picsum.photos/id/243/1200/768",
+    var imagesUrls = [
+    "https://cdn.pixabay.com/photo/2016/06/07/20/20/water-lily-1442497_1280.jpg",
+   "https://cdn.pixabay.com/photo/2014/12/17/21/30/wild-flowers-571940_1280.jpg", "https://cdn.pixabay.com/photo/2016/08/14/12/41/water-lily-1592793_1280.png",
         "https://picsum.photos/id/239/1200/768",
         "https://picsum.photos/id/253/1200/768",
         "https://picsum.photos/id/215/1200/768",
@@ -42,7 +42,7 @@ class ImageLoadingViewController: UIViewController {
         searchBar.delegate = self
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+/*    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         for imagePath in imageUrls {
@@ -78,21 +78,23 @@ class ImageLoadingViewController: UIViewController {
 //            }
 //        }
     
-    }
+    }*/
 }
 
 extension ImageLoadingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return images.count
+        return imagesUrls.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ImageLoadingViewControllerID", for: indexPath) as! ImageTableViewCell
         
-        cell.myImageView(images[indexPath.row])
-       // or
+//        cell.myImageView(imagesUrls[indexPath.row])
+        cell.imagePath = imagesUrls[indexPath.row]
+        cell.imageLoadingLabel.text = imagesUrls[indexPath.row]
+       
 //        cell.imageLoadingView.image = images[indexPath.row].image
 //        cell.imageLoadingLabel.text = images[indexPath.row].imagePath
         
@@ -101,6 +103,10 @@ extension ImageLoadingViewController: UITableViewDataSource, UITableViewDelegate
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
 }
 
 extension ImageLoadingViewController: UISearchBarDelegate {
@@ -108,9 +114,9 @@ extension ImageLoadingViewController: UISearchBarDelegate {
     func searchBarResultsListButtonClicked(_ searchBar: UISearchBar) {}
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        if let text = searchBar.text {
-            let imageModel = ImageModel(imagePath: text)
-            images.append(imageModel)
-        }
+//        if let text = searchBar.text {
+//            let imageModel = ImageModel(imagePath: text)
+//            imagesUrls.append(imageModel)
+//        }
     }
 }
